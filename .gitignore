@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+1.6-arrays/input.txt
+1.6-arrays/output.txt
+1.5-character-input-and-output/input.txt
