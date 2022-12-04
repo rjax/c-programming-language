@@ -27,10 +27,10 @@ int getBitsShort()
 
     while (arg > 0 && i < 128)
     {
-        i++;
-        arg <<= 1;
+        i+=8;
+        arg <<= i;
     }
-    return ++i;
+    return i;
 }
 
 int getBitsInt()
@@ -40,10 +40,10 @@ int getBitsInt()
 
     while (arg > 0 && i < 128)
     {
-        i++;
-        arg <<= 1;
+        i+=8;
+        arg <<= i;
     }
-    return ++i;
+    return i;
 }
 
 int getBitsLong()
