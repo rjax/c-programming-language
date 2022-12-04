@@ -25,9 +25,8 @@ int getBitsShort()
     int i = 1;
     short arg = 1;
 
-    while (arg > 0 && i < 128)
+    while (arg > 0 && i++ < 128)
     {
-        i++;
         arg <<= 1;
     }
     return i;
@@ -38,9 +37,8 @@ int getBitsInt()
     int i = 1;
     int arg = 1;
 
-    while (arg > 0 && i < 128)
+    while (arg > 0 && i++ < 128)
     {
-        i++;
         arg <<= 1;
     }
     return i;
@@ -51,9 +49,8 @@ int getBitsLong()
     int i = 1;
     long arg = 1;
 
-    while (arg > 0 && i < 128)
+    while (arg > 0 && i++ < 128)
     {
-        i++;
         arg <<= 1;
     }
     return i;
@@ -64,10 +61,10 @@ int getBitsChar()
     int i = 1;
     char arg = 1;
 
-    while (arg > 0 && i < 128)
+    while (arg > 0 && i++ < 128)
     {
-        i++;
         arg <<= 1;
     }
+
     return i;
 }
