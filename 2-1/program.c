@@ -22,7 +22,7 @@ int main()
 
 int getBitsShort()
 {
-    int i = 0;
+    int i = 1;
     short arg = 1;
 
     while (arg > 0 && i < 128)
@@ -30,12 +30,12 @@ int getBitsShort()
         i++;
         arg <<= 1;
     }
-    return ++i;
+    return i;
 }
 
 int getBitsInt()
 {
-    int i = 0;
+    int i = 1;
     int arg = 1;
 
     while (arg > 0 && i < 128)
@@ -43,12 +43,12 @@ int getBitsInt()
         i++;
         arg <<= 1;
     }
-    return ++i;
+    return i;
 }
 
 int getBitsLong()
 {
-    int i = 0;
+    int i = 1;
     long arg = 1;
 
     while (arg > 0 && i < 128)
@@ -56,12 +56,12 @@ int getBitsLong()
         i++;
         arg <<= 1;
     }
-    return ++i;
+    return i;
 }
 
 int getBitsChar()
 {
-    int i = 0;
+    int i = 1;
     char arg = 1;
 
     while (arg > 0 && i < 128)
@@ -69,5 +69,5 @@ int getBitsChar()
         i++;
         arg <<= 1;
     }
-    return ++i;
+    return i;
 }
