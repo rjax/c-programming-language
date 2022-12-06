@@ -41,97 +41,96 @@ int main()
 
 int getBitsShort()
 {
-    int i = 1;
+    int i = 0;
     short arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
     return i;
 }
+
 int getBitsUShort()
 {
-    int i = 1;
-    unsigned short arg = 1;
+    int i = 0;
+    short arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
-    return i - 1;
+    return i;
 }
 
 int getBitsInt()
 {
-    int i = 1;
+    int i = 0;
     int arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
     return i;
 }
 
 int getBitsUInt()
 {
-    int i = 1;
+    int i = 0;
     unsigned int arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
-    return i - 1;
+    return i;
 }
 
 int getBitsLong()
 {
-    int i = 1;
+    int i = 0;
     long arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
     return i;
 }
 
 int getBitsULong()
 {
-    int i = 1;
+    int i = 0;
     unsigned long arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
-    return i - 1;
+    return i;
 }
 
 int getBitsChar()
 {
-    int i = 1;
+    int i = 0;
     char arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
-
     return i;
 }
 
 int getBitsUChar()
 {
-    int i = 1;
+    int i = 0;
     unsigned char arg = 1;
 
-    while (arg > 0 && i++ < 128)
+    while (arg > 0 && (i += 8) < 128)
     {
-        arg <<= 1;
+        arg <<= 8;
     }
-
-    return i - 1;
+    return i;
 }
