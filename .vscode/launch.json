@@ -51,7 +51,8 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "C/C++: gcc build active file"
         },
         {
             "name": "debug - input source file",
