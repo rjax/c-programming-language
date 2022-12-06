@@ -12,8 +12,6 @@ int getBitsUChar();
 int getBitsShort();
 int getBitsUShort();
 
-// int getBitsFloat();
-
 int main()
 {
     int bitCount = getBitsChar();
@@ -39,12 +37,6 @@ int main()
 
     bitCount = getBitsULong();
     printf("unsigned long is %d bits or %d bytes\n", bitCount, bitCount / 8);
-
-    // bitCount = getBitsFloat();
-    // printf("float is %d bits or %d bytes\n", bitCount, bitCount / 8);
-    // float a;
-    // printf("%f\n", __FLT_MAX__);
-    // printf("float is %ld bits or %ld bytes\n", sizeof(a) / 8, sizeof(a));
 }
 
 int getBitsShort()
@@ -142,30 +134,3 @@ int getBitsUChar()
     }
     return i;
 }
-
-// int getBitsFloat()
-// {
-//     int i = 1;
-//     float arg = 1;
-//     unsigned int ui;
-//     unsigned long ul;
-//     unsigned short us;
-//     unsigned long long ull;
-
-//     for (; i < 128 && (ui + us + ul + ull) > 0; i++)
-//     {
-//         arg *= 2;
-//         ui = arg;
-//         ul = arg;
-//         us = arg;
-//         ull = arg;
-//         printf("%d: %-50f\t%d\t%d\t%ld\t%lld\n", i, arg, us, ui, ul, ull);
-//     }
-
-//     // for (; arg > 0 && arg > arg/2 , i < 256; i++)
-//     // {
-//     //     arg *= 2;
-//     //     printf("%d - %f\n", i, arg);
-//     // }
-//     return i;
-// }
