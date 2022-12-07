@@ -127,6 +127,10 @@ void printBitmap(unsigned bitmap, int addLineFeed)
         printf("\n");
 }
 
+// Shift right causes problems with the msb.
+// The msb is set to it's original value when >> is performed
+// To avoid this, the function uses an unsigned long but only 
+// uses the lower 32 bits 
 int setbits(unsigned x, int p, int n, unsigned y)
 {
     printf("x: %u, p: %d, n: %d, y: %u\n", x, p, n, y);
@@ -147,6 +151,9 @@ int setbits(unsigned x, int p, int n, unsigned y)
     return result;
 }
 
+// This function works without right shift and 
+// the associated problem, but at the expense of 
+// setting each bit in 2 for loops.
 int setbits2(int x, int p, int n, int y)
 {
     printf("x: %d, p: %d, n: %d, y: %d\n", x, p, n, y);
