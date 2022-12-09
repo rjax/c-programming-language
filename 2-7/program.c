@@ -3,8 +3,20 @@
 // define position p starts from 0
 
 #include <stdio.h>
-int invert(unsigned, int, int);
+
+#define RED "\033[0;31m"
+#define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define BLUE "\033[0;34m"
+#define PURPLE "\033[0;35m"
+#define CYAN "\033[0;36m"
+#define WHITE "\033[0;37m"
+
 void printBitmap(int, int);
+unsigned invert(unsigned, int, int);
+char *color(const char *, const char *);
+
+char stringBuffer[256];
 
 int main()
 {
@@ -19,15 +31,15 @@ int main()
 
     expected = 1360073185;
     actual = invert(arg, 4, 4);
-    printf("%s\n", actual == expected ? "OK" : "FAIL");
+    printf("%s\n", actual == expected ? color("OK", GREEN) : color("FAIL", RED));
 
     expected = 1360073198;
     actual = invert(arg, 0, 8);
-    printf("%s\n", actual == expected ? "OK" : "FAIL");
+    printf("%s\n", actual == expected ? color("OK", GREEN) : color("FAIL", RED));
 
     expected = 2920354065;
     actual = invert(arg, 24, 8);
-    printf("%s\n", actual == expected ? "OK" : "FAIL");
+    printf("%s\n", actual == expected ? color("OK", GREEN) : color("FAIL", RED));
 }
 
 void printBitmap(int arg, int addLineFeed)
@@ -48,7 +60,7 @@ void printBitmap(int arg, int addLineFeed)
         printf("\n");
 }
 
-int invert(unsigned x, int p, int n)
+unsigned invert(unsigned x, int p, int n)
 {
     printf("x: %d, p: %d, n %d\n", x, p, n);
 
@@ -76,4 +88,22 @@ int invert(unsigned x, int p, int n)
     printBitmap(left | center | right, 1);
 
     return left | center | right;
+}
+
+char *color(const char *msg, const char *color)
+{
+    extern char stringBuffer[256];
+    int i = 0;
+
+    for (; color[i] != '\0'; i++)
+        stringBuffer[i] = color[i];
+
+    for (int j = 0; msg[j] != '\0'; j++)
+        stringBuffer[i++] = msg[j];
+
+    for (int k = 0; WHITE[k] != '\0'; k++)
+        stringBuffer[i++] = WHITE[k];
+
+    stringBuffer[i] = '\0';
+    return stringBuffer;
 }
